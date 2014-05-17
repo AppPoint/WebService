@@ -16,6 +16,25 @@ public class Restaurant {
     private String password;
     private String description;
     private String idPlacesAPI;
+    private String name;
+    private String adress;
+    private double latitude;
+    private double longitude;
+    private double rating;
+    private boolean isPoint;
+
+    public Restaurant(int id, String email, String password, String description, String idPlacesAPI, String name, String adress, double latitude, double longitude, boolean isPoint) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.description = description;
+        this.idPlacesAPI = idPlacesAPI;
+        this.name = name;
+        this.adress = adress;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.isPoint = isPoint;
+    }
 
     public Restaurant(int id, String email, String password, String description, String idPlacesAPI) {
         this.id = id;
@@ -23,6 +42,55 @@ public class Restaurant {
         this.password = password;
         this.description = description;
         this.idPlacesAPI = idPlacesAPI;
+    }
+
+    public Restaurant(String idPlacesAPI, String name, String adress, double latitude, double longitude, boolean isPoint) {
+        this.idPlacesAPI = idPlacesAPI;
+        this.name = name;
+        this.adress = adress;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.isPoint = isPoint;
+    }
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
     public int getId() {
@@ -65,9 +133,19 @@ public class Restaurant {
         this.idPlacesAPI = idPlacesAPI;
     }
 
+    public boolean isIsPoint() {
+        return isPoint;
+    }
+
+    public void setIsPoint(boolean isPoint) {
+        this.isPoint = isPoint;
+    }
+
     @Override
     public String toString() {
-        return "Restaurant{" + "id=" + id + ", email=" + email + ", password=" + password + ", description=" + description + ", idPlacesAPI=" + idPlacesAPI + '}';
+        return "Restaurant{" + "id=" + id + ", email=" + email + ", password=" + password + ", description=" + description + ", idPlacesAPI=" + idPlacesAPI + ", name=" + name + ", adress=" + adress + ", latitude=" + latitude + ", longitude=" + longitude + ", rating=" + rating + ", isPoint=" + isPoint + '}';
     }
+    
+    
     
 }
