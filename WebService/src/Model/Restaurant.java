@@ -12,47 +12,49 @@ package Model;
  */
 public class Restaurant {
     private int id;
+    private String name;
+    private String adress;
+    private Double latitude;
+    private Double longitude;
+    private String placesID;
     private String email;
     private String password;
     private String description;
-    private String idPlacesAPI;
-    private String name;
-    private String adress;
-    private double latitude;
-    private double longitude;
-    private double rating;
+    private String referencePlaces;
     private boolean isPoint;
 
-    public Restaurant(int id, String email, String password, String description, String idPlacesAPI, String name, String adress, double latitude, double longitude, boolean isPoint) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.description = description;
-        this.idPlacesAPI = idPlacesAPI;
+    public Restaurant(String name, String adress, Double latitude, Double longitude, String placesID, String referencePlaces, boolean isPoint) {
         this.name = name;
         this.adress = adress;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.placesID = placesID;
+        this.referencePlaces = referencePlaces;
         this.isPoint = isPoint;
     }
 
-    public Restaurant(int id, String email, String password, String description, String idPlacesAPI) {
+    public Restaurant(int id, String name, String adress, Double latitude, Double longitude, String placesID, String email, String password, String description, String referencePlaces, boolean isPoint) {
         this.id = id;
-        this.email = email;
-        this.password = password;
-        this.description = description;
-        this.idPlacesAPI = idPlacesAPI;
-    }
-
-    public Restaurant(String idPlacesAPI, String name, String adress, double latitude, double longitude, boolean isPoint) {
-        this.idPlacesAPI = idPlacesAPI;
         this.name = name;
         this.adress = adress;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.placesID = placesID;
+        this.email = email;
+        this.password = password;
+        this.description = description;
+        this.referencePlaces = referencePlaces;
         this.isPoint = isPoint;
     }
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -69,36 +71,28 @@ public class Restaurant {
         this.adress = adress;
     }
 
-    public double getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 
-    public double getRating() {
-        return rating;
+    public String getPlacesID() {
+        return placesID;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setPlacesID(String placesID) {
+        this.placesID = placesID;
     }
 
     public String getEmail() {
@@ -125,12 +119,12 @@ public class Restaurant {
         this.description = description;
     }
 
-    public String getIdPlacesAPI() {
-        return idPlacesAPI;
+    public String getReferencePlaces() {
+        return referencePlaces;
     }
 
-    public void setIdPlacesAPI(String idPlacesAPI) {
-        this.idPlacesAPI = idPlacesAPI;
+    public void setReferencePlaces(String referencePlaces) {
+        this.referencePlaces = referencePlaces;
     }
 
     public boolean isIsPoint() {
@@ -143,9 +137,7 @@ public class Restaurant {
 
     @Override
     public String toString() {
-        return "Restaurant{" + "id=" + id + ", email=" + email + ", password=" + password + ", description=" + description + ", idPlacesAPI=" + idPlacesAPI + ", name=" + name + ", adress=" + adress + ", latitude=" + latitude + ", longitude=" + longitude + ", rating=" + rating + ", isPoint=" + isPoint + '}';
+        return "Restaurant{" + "id=" + id + ", name=" + name + ", adress=" + adress + ", latitude=" + latitude + ", longitude=" + longitude + ", placesID=" + placesID + ", email=" + email + ", password=" + password + ", description=" + description + ", referencePlaces=" + referencePlaces + ", isPoint=" + isPoint + '}';
     }
-    
-    
     
 }

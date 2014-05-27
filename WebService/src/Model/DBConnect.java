@@ -24,18 +24,17 @@ public class DBConnect {
     private static final String user = "root";
     private static final String pwd = "root";
 
-    public static Statement getStatement() {
-        Statement stmp = null;
+    public static Connection getConnection() {
+        Connection conn = null;
         try {
             Class.forName(driver);
-            Connection conn = DriverManager.getConnection("jdbc:" + driverStr + ":" + database + "?" + "user=" + user + "&password=" + pwd);
-            stmp = conn.createStatement();
+            conn = DriverManager.getConnection("jdbc:" + driverStr + ":" + database + "?" + "user=" + user + "&password=" + pwd);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return stmp;
+        return conn;
     }
     
 
