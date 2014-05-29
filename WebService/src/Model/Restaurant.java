@@ -6,6 +6,8 @@
 
 package Model;
 
+import org.json.JSONObject;
+
 /**
  *
  * @author patrick
@@ -22,18 +24,10 @@ public class Restaurant {
     private String description;
     private String referencePlaces;
     private boolean isPoint;
+    private boolean featureReservation;
+    private boolean featureMenu;
 
-    public Restaurant(String name, String adress, Double latitude, Double longitude, String placesID, String referencePlaces, boolean isPoint) {
-        this.name = name;
-        this.adress = adress;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.placesID = placesID;
-        this.referencePlaces = referencePlaces;
-        this.isPoint = isPoint;
-    }
-
-    public Restaurant(int id, String name, String adress, Double latitude, Double longitude, String placesID, String email, String password, String description, String referencePlaces, boolean isPoint) {
+    public Restaurant(int id, String name, String adress, Double latitude, Double longitude, String placesID, String email, String password, String description, String referencePlaces, boolean isPoint, boolean featureReservation, boolean featureMenu) {
         this.id = id;
         this.name = name;
         this.adress = adress;
@@ -45,6 +39,8 @@ public class Restaurant {
         this.description = description;
         this.referencePlaces = referencePlaces;
         this.isPoint = isPoint;
+        this.featureReservation = featureReservation;
+        this.featureMenu = featureMenu;
     }
 
     public int getId() {
@@ -135,9 +131,27 @@ public class Restaurant {
         this.isPoint = isPoint;
     }
 
+    public boolean isFeatureReservation() {
+        return featureReservation;
+    }
+
+    public void setFeatureReservation(boolean featureReservation) {
+        this.featureReservation = featureReservation;
+    }
+
+    public boolean isFeatureMenu() {
+        return featureMenu;
+    }
+
+    public void setFeatureMenu(boolean featureMenu) {
+        this.featureMenu = featureMenu;
+    }
+
     @Override
     public String toString() {
-        return "Restaurant{" + "id=" + id + ", name=" + name + ", adress=" + adress + ", latitude=" + latitude + ", longitude=" + longitude + ", placesID=" + placesID + ", email=" + email + ", password=" + password + ", description=" + description + ", referencePlaces=" + referencePlaces + ", isPoint=" + isPoint + '}';
+        return "Restaurant{" + "id=" + id + ", name=" + name + ", adress=" + adress + ", latitude=" + latitude + ", longitude=" + longitude + ", placesID=" + placesID + ", email=" + email + ", password=" + password + ", description=" + description + ", referencePlaces=" + referencePlaces + ", isPoint=" + isPoint + ", featureReservation=" + featureReservation + ", featureMenu=" + featureMenu + '}';
     }
+    
+    
     
 }
